@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preference/login.dart';
+import 'package:shared_preference/signup.dart';
 import 'package:shared_preference/utils/user_simple_preferences.dart';
 
 Future main() async {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  Login(),
+      home:  SignUp(),
     );
   }
 }

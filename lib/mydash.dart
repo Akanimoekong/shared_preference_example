@@ -9,7 +9,6 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
-
   String name = "Dashboard";
 
   @override
@@ -19,9 +18,32 @@ class _DashBoardState extends State<DashBoard> {
     name = UserSimplePreferences.getUsername() ?? '';
   }
 
+  void goBack() {
+    // Navigator.pop(context,)
+    Navigator.of(context).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text(name),),);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Shared Preference"),
+        leading: GestureDetector(
+          child: Icon(Icons.arrow_back),
+          onTap: goBack,
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: [
+            Container(
+              child: Center(child: Text(name),),
+            ),
+
+          ],
+        ),
+      ),
+    );
   }
 }
-
